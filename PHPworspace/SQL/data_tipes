@@ -1,0 +1,57 @@
+4 main data types
+
+    Text fields
+Binary field
+Numeric fields
+AUTO_INCREMENT
+
+    STRING FIELD
+*UNDERSTAND CHARACTER SETS AND ARE INDEXABLE FOR SEACHING
+*CHAR == allocate the entire space(faster for small strings where lenght is known)
+*VARCHAR == allocates a variable amount of space depending on the data lenght(less space)
+
+    TEXT FIELDS
+*TINYTEXT UP TO 255 CHARACTERS
+*TEXT 65K
+*MEDIUMTEXT 16m
+*LONGTEXT 4G
+
+*GENERALLY NOT USED WITH INDEXING OR SORTING -and only limited to a prefix
+
+    Binary Types
+byte = 8 bits
+
+*Bite(n) up to 255 bytes
+VARBINARY(n) up to 65k bytes
+
+small images -data
+not indexed or sorted
+
+    Binary Large Objects(BLOB)
+*Large raw data, files, images, word documents, PDFs, moveies and ets.
+*No translation, indexing, or character set
+
+*TINYBLOB(n) up to 255
+*BLOB(n) 65k
+*MEDIUMBLOB(n) 16M
+*LONGBLOB(n) 4G
+
+    Integer Numbers
+Integer numbers are very afficient, take little starage, and easy proces
+*TINYINT (-128,128)
+*SMALLINT (-32768, 32768)
+*INT (2 BILLION)
+*BIGINT (10**19 ISH)
+
+    Floating point numbers
+Can be represented a wide range of values, but accuracy is limited.
+*FLOAT (32 bit) 10**38 7 digits of accuracy
+*DOUBLE (64) 10**308 14 digits of accuracy
+
+    DATES
+*TIMESTAMP - 'YYYY-MM-DD HH:MM:SS' (1970,2037)
+*DATETIME - 'YYYY-MM-DD HH:MM:SS'
+*DATE - 'YYYY-MM-DD'
+TIME - 'HH:MM:SS'
+
+Build in MySQL function NOW()

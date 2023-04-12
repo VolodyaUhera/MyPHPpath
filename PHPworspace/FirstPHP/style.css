@@ -1,0 +1,6 @@
+pre {
+    display: block;
+    font-family: monospace;
+    margin: 1em;
+    white-space: pre;
+}

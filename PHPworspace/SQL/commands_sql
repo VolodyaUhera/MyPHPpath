@@ -1,0 +1,128 @@
+Starting Mysql with MAMP (Macintosh):
+
+/Applications/MAMP/Library/bin/mysql -u root -p  (enter root when prompted)
+
+Starting MySql with XAMPP (Windows):
+
+c:\xampp\mysql\bin\mysql.exe -u root -p
+
+Starting MySQL in linux:
+
+mysql -u root -p
+
+CREATE DATABASE People DEFAULT CHARACTER SET utf8;
+
+USE People; (Command line only)
+
+CREATE TABLE Users (
+  name VARCHAR(128),
+  email VARCHAR(128)
+);
+
+ALTER TABLE table_name ADD COLUMN column_name data_type;
+
+add new column to database
+
+ALTER TABLE customers ADD COLUMN phone VARCHAR(20);
+
+DESCRIBE Users;
+
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Sally', 'sally@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Somesh', 'somesh@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Caitlin', 'cait@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu') ;
+
+DELIMITER //
+
+CREATE PROCEDURE insert_data()
+BEGIN
+  DECLARE i INT DEFAULT 1;
+
+  WHILE i <= 10 DO
+    INSERT INTO mytable (column1, column2) VALUES (i, 'data');
+    SET i = i + 1;
+  END WHILE;
+END //
+
+DELIMITER ;
+
+tHIS is loop for insert data
+
+DELIMITER //
+This line sets the delimiter to //. This is necessary because the stored procedure contains multiple SQL statements separated by semicolons,
+which is the default delimiter. By changing the delimiter to //, MySQL knows to treat the entire stored procedure as a single statement until it encounters the new delimiter.
+
+CREATE PROCEDURE insert_data()
+This line creates a new stored procedure called insert_data. A stored procedure is a set of SQL statements that are saved in the database and
+can be executed multiple times with different parameters.
+
+BEGIN
+This line begins the body of the stored procedure. All SQL statements within the stored procedure will be executed in the order they appear
+within the BEGIN and END keywords.
+
+DECLARE i INT DEFAULT 1;
+This line declares a local variable called i of type INT and initializes it with a value of 1. This variable will be used to keep track of t
+he loop iteration count.
+
+WHILE i <= 10 DO
+This line begins a WHILE loop that will iterate as long as the value of i is less than or equal to 10.
+
+INSERT INTO mytable (column1, column2) VALUES (i, 'data');
+This line inserts a new row into the mytable table, with values for the column1 and column2 columns. The value of i is used for column1, a
+nd the string 'data' is used for column2.
+
+SET i = i + 1;
+This line increments the value of i by 1, which will be used to track the iteration count of the loop.
+
+END WHILE;
+This line ends the WHILE loop.
+
+END //
+This line ends the body of the stored procedure.
+
+DELIMITER ;
+This line sets the delimiter back to the default semicolon. This is necessary so that subsequent SQL statements outside of the stored
+procedure will be executed correctly.
+
+DELETE FROM database;
+
+DELETE FROM Users WHERE email='ted@umich.edu';
+
+DELETE FROM table_name WHERE column_name IS NULL;
+
+UPDATE Users SET name='Charles' WHERE email='csev@umich.edu';
+
+SELECT * FROM Users;
+
+SELECT * FROM Users WHERE email='csev@umich.edu';
+
+SELECT * FROM Users ORDER BY email;
+
+SELECT * FROM Users ORDER BY email DESC;
+
+SELECT * FROM Users WHERE name LIKE '%e%';
+
+SELECT * FROM Users ORDER BY email DESC LIMIT 2;
+
+SELECT * FROM Users ORDER BY email LIMIT 1,2;
+
+CREATE TABLE Users (
+  user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(128),
+  email VARCHAR(128),
+  PRIMARY KEY(user_id),
+  INDEX ( name )
+);
+
+To add the index after the table was created:
+
+ALTER TABLE Users ADD INDEX ( name );
+
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Sally', 'sally@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Somesh', 'somesh@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Caitlin', 'cait@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu') ;
+
+SELECT sha1(CONCAT(`name`,age)) AS X FROM Ages ORDER BY X;
