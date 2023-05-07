@@ -18,4 +18,5 @@ echo("Until you do this, you will be very very unhappy doing PHP development\n")
 echo("in this PHP environment.\n");
 
 echo "</pre>\n";
+
 ?>
