@@ -15,7 +15,7 @@ if ( isset($_POST['email']) && isset($_POST['pass'])) {
     if ($_POST['email'] == "umsi@umich.edu" && $_POST['pass'] == "php123"){
         $_SESSION['succses'] = "Log in successful";
         $_SESSION['name'] = $_POST['email'];
-        header("Location: index.php");
+        header("Location: alarmtest.php");
         return;
     }
 

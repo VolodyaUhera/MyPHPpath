@@ -1,6 +1,6 @@
 <?php
 if ( isset($_POST['cancel'] ) ) {
-    header("Location: index.php");
+    header("Location: alarmtest.php");
     return;
 }
 $salt = 'XyZzy12*_';

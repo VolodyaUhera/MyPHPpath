@@ -23,7 +23,7 @@ if ( isset($_POST['make']) &&  isset($_POST['model']) &&  isset($_POST['year']) 
         ':mileage' => $_POST['mileage'],
         ':year' => $_POST['year']
     ));
-    header("Location: index.php");
+    header("Location: alarmtest.php");
     return;
 
 

@@ -1,7 +1,7 @@
 <?php
 if ( isset($_POST['cancel'] ) ) {
     // Redirect the browser to game.php
-    header("Location: index.php");
+    header("Location: alarmtest.php");
     return;
 }
 $name = isset($_POST['who']) ? $_POST['who'] : '';

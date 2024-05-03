@@ -5,7 +5,7 @@ if ( ! isset($_GET['name']) || strlen($_GET['name']) < 1  ) {
 }
 
 if ( isset($_POST['logout']) ) {
-    header('Location: index.php');
+    header('Location: alarmtest.php');
     return;
 }
 

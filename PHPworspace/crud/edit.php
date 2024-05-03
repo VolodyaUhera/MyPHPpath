@@ -28,14 +28,14 @@ if ( isset($_POST['name']) && isset($_POST['email'])
         ':password' => $_POST['password'],
         ':user_id' => $_POST['user_id']));
     $_SESSION['success'] = 'Record updated';
-    header( 'Location: index.php' ) ;
+    header( 'Location: alarmtest.php' ) ;
     return;
 }
 
 // Guardian: Make sure that user_id is present
 if ( ! isset($_GET['user_id']) ) {
   $_SESSION['error'] = "Missing user_id";
-  header('Location: index.php');
+  header('Location: alarmtest.php');
   return;
 }
 
@@ -44,7 +44,7 @@ $stmt->execute(array(":xyz" => $_GET['user_id']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ( $row === false ) {
     $_SESSION['error'] = 'Bad value for user_id';
-    header( 'Location: index.php' ) ;
+    header( 'Location: alarmtest.php' ) ;
     return;
 }
 

@@ -5,9 +5,9 @@ if ( ! isset($_GET['name']) || strlen($_GET['name']) < 1  ) {
     die('Name parameter missing');
 }
 
-// If the user requested logout go back to index.php
+// If the user requested logout go back to alarmtest.php
 if ( isset($_POST['logout']) ) {
-    header('Location: index.php');
+    header('Location: alarmtest.php');
     return;
 }
 

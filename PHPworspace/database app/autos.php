@@ -16,7 +16,7 @@
         }
 
         if(isset($_POST['logout'])) {
-            header('Location: index.php');
+            header('Location: alarmtest.php');
         } else {
          
             if(isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage'])) {
