@@ -5,6 +5,27 @@
     <title>js-01</title>
 </head>
 <body>
+<script>
+    function PartyAnimal(nam) {
+        this.x = 0;
+        this.name = nam;
+        console.log("Build nam: "+nam);
+        this.party = function () {
+            this.x = this.x + 1;
+            console.log(nam+" So far "+this.x);
+        }
+    }
 
+    an = new PartyAnimal('Bob');
+
+    an.party();
+    an.party();
+    an.party();
+
+    an2 = new PartyAnimal('ALie');
+    an2.party();
+    an2.party();
+    an2.party();
+</script>
 </body>
 </html>

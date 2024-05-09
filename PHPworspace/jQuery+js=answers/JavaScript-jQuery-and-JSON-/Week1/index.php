@@ -11,7 +11,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ambika Patidar's Resume Registry</title>
+    <title>e6e537c2</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 <body>

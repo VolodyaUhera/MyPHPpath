@@ -1,6 +1,4 @@
 <?php
-    echo "test";
-
     session_start();
     if (!isset($_SESSION['name']))
     {
@@ -34,7 +32,7 @@
         }
     else
     {
-        $_SESSION['fail']="All values are required";
+        $_SESSION['fail']="All fields are required";
     }
 ?>
 
@@ -42,7 +40,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ambika Patidar's Profile Add</title>
+  <title>e6e537c2</title>
   <?php require_once "bootstrap.php"; ?>
 </head>
 <div class="container">
@@ -67,7 +65,7 @@
         <p>Summary:<br/>
         <textarea name="summary" rows="8" cols="80"></textarea>
         <p>
-        <input type="submit" value="Add">
+        <button><input type="submit" value="Add"></button>
         <input type="submit" name="cancel" value="Cancel">
         </p>
     </form>
